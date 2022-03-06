@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::put('/register',[ApiController::class,'register']);
-Route::post('/login',[ApiController::class,'login']);
-Route::get('/detail',[ApiController::class,'detail'])->middleware('auth:api');
-Route::get('/list-post',[ApiController::class,'listPost']);
-Route::put('/set-post',[ApiController::class,'setPost'])->middleware('auth:api');
-Route::get('/get-post/{id}',[ApiController::class,'getPost']);
+Route::post('/register',[ApiController::class,'register']);
+Route::get('/login',[ApiController::class,'login']);
+Route::get('/users/{id}',[ApiController::class,'getUser'])->middleware('auth:api');
+Route::get('/posts',[ApiController::class,'listPost']);
+Route::post('/posts',[ApiController::class,'setPost'])->middleware('auth:api');
+Route::get('/posts/{id}',[ApiController::class,'getPost']);
